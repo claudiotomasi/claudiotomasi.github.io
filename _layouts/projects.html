@@ -1,12 +1,9 @@
 ---
-layout: base
+layout: base 
 ---
 
 <div class="portfolio">
-  <!-- {% assign portfolio_posts = paginator.posts | where: 'categories','portfolio' %}
-  <p>All Posts: {{ paginator.posts | size }}</p>
-  <p>Portfolio Posts: {{ portfolio_posts | size }}</p> -->
-   {% for post in paginator.posts %}
+  {% for post in site.categories.projects %}
     <a href="{{ post.url | prepend: site.baseurl }}" class="portfolio-item">
       <div>
         <h1 class="portfolio-title">{{ post.title }}</h1>

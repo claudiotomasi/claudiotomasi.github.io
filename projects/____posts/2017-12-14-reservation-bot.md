@@ -3,7 +3,6 @@ layout: post
 title:  "Reservation Bot"
 info: "Restaurant Reservation Bot"
 tech: "Python, Slack API"
-categories: projects
 type: B Company
 ---
 

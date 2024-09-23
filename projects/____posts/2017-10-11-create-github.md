@@ -3,7 +3,6 @@ layout: post
 title:  "Create github"
 info: "Create new github repository"
 tech: "none"
-categories: portfolio
 type: A Company
 ---
 

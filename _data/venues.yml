@@ -7,3 +7,11 @@
 
 "Vision":
   color: "#009f36"
+
+"Springer":
+  url: https://link.springer.com/
+  color: "#00369f"
+
+"IRIS":
+  url: https://iris.unipv.it/
+  color: "#85a326"

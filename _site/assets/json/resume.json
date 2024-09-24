@@ -26,11 +26,22 @@
     {
       "name": "Univesity of Bergamo",
       "position": "PostDoctoral Researcher",
+      "location": "Bergamo (IT)",
       "url": "https://hexagon.deib.polimi.it/",
       "startDate": "2024-08-01",
       "endDate": "ONGOING",
       "summary": "Modeling and Implementing global-exact solution to MI-ACOPF problems.",
       "highlights": ["Power Grid", "Networks", "Non-linearity, non-convexity"]
+    },
+    {
+      "name": "JRC - European Commission",
+      "position": "Transport Policy Researched",
+      "location": "Seville (SP)",
+      "url": "https://joint-research-centre.ec.europa.eu/jrc-sites-across-europe/jrc-seville-spain_en",
+      "startDate": "2023-09-01",
+      "endDate": "2024-05-30",
+      "summary": "Modeling and Studying public and private transport network to increase accessibility.",
+      "highlights": ["Public and private transport", "Graphs", "Optimization"]
     }
   ],
   // "volunteer": [
@@ -151,7 +162,7 @@
   ],
   "languages": [
     {
-      "language": "German",
+      "language": "Italian",
       "fluency": "Native speaker",
       "icon": ""
     },

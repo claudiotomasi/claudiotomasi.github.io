@@ -654,6 +654,10 @@ html[data-theme="dark"] .social-btn:hover {
 .justify {
     text-align: justify;
 }
+/* ---- HEADINGS SHOULD NOT BE JUSTIFIED ---- */
+.post-content h2{
+  text-align: left; !important;
+}
 
 
 /* Remove all box-shadows from home social buttons */

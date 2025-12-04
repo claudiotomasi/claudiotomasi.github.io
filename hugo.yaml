@@ -41,8 +41,8 @@ params:
   description: "Researcher in optimization, algorithms, power systems, and transport networks."
   author: "Claudio Tomasi"
   title: "Claudio Tomasi"
-  images:
-    - "/images/profile.jpg"
+  # images:
+  #   - "/images/profile.jpg"
   env: production   # tells PaperMod to output SEO/OG meta
 
 markup:

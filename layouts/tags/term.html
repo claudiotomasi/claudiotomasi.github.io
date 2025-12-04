@@ -1,0 +1,37 @@
+{{ define "main" }}
+  <header class="page-header">
+    <a class="back-link" href="/tags/">← Back to Tags</a>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}
+      <p>{{ . }}</p>
+    {{ end }}
+  </header>
+
+  <div class="projects-grid">
+    {{ range .Pages }}
+      <article class="project-card">
+        <a href="{{ .RelPermalink }}">
+          {{ with .Params.cover_image }}
+            <div class="project-thumb">
+              <img src="{{ . }}" alt="{{ $.Title }}">
+            </div>
+          {{ end }}
+
+          <h2>{{ .Title }}</h2>
+
+          {{ with .Params.summary }}
+            <p>{{ . }}</p>
+          {{ end }}
+
+          {{ with .Params.tags }}
+            <div class="project-tags">
+              {{ range . }}
+                <span class="project-tag">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        </a>
+      </article>
+    {{ end }}
+  </div>
+{{ end }}

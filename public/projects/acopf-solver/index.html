@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Surrogate Modeling for Power Grid Optimization | Claudio Tomasi</title>
+<meta name="keywords" content="optimization, power-systems, machine-learning, graph-neural-networks, bilevel-optimization, neural-networks, Python, Julia">
+<meta name="description" content="Neural and graph neural networks for bilevel optimization in electrical power grids.">
+<meta name="author" content="Claudio Tomasi">
+<link rel="canonical" href="http://localhost:1313/projects/acopf-solver/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d74e7a50cc974e00fdba0ae96191abb6ce3ea08ea01dcb0834ab41b6501ee916.css" integrity="sha256-1056UMyXTgD9ugrpYZGrts4&#43;oI6gHcsINKtBtlAe6RY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/acopf-solver/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script src="https://kit.fontawesome.com/938a6d34ff.js" crossorigin="anonymous"></script><meta property="og:url" content="http://localhost:1313/projects/acopf-solver/">
+  <meta property="og:site_name" content="Claudio Tomasi">
+  <meta property="og:title" content="Surrogate Modeling for Power Grid Optimization">
+  <meta property="og:description" content="Neural and graph neural networks for bilevel optimization in electrical power grids.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-08-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-08-01T00:00:00+00:00">
+    <meta property="article:tag" content="Optimization">
+    <meta property="article:tag" content="Power-Systems">
+    <meta property="article:tag" content="Machine-Learning">
+    <meta property="article:tag" content="Graph-Neural-Networks">
+    <meta property="article:tag" content="Bilevel-Optimization">
+    <meta property="article:tag" content="Neural-Networks">
+      <meta property="og:image" content="http://localhost:1313/images/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/images/profile.jpg">
+<meta name="twitter:title" content="Surrogate Modeling for Power Grid Optimization">
+<meta name="twitter:description" content="Neural and graph neural networks for bilevel optimization in electrical power grids.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "http://localhost:1313/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Surrogate Modeling for Power Grid Optimization",
+      "item": "http://localhost:1313/projects/acopf-solver/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Surrogate Modeling for Power Grid Optimization",
+  "name": "Surrogate Modeling for Power Grid Optimization",
+  "description": "Neural and graph neural networks for bilevel optimization in electrical power grids.",
+  "keywords": [
+    "optimization", "power-systems", "machine-learning", "graph-neural-networks", "bilevel-optimization", "neural-networks", "Python", "Julia"
+  ],
+  "articleBody": " 🧠 Overview This work was conducted within the HEXAGON Project (PRIN-PNRR grant P20227CTY3) at the Università degli Studi di Bergamo. HEXAGON focuses on developing highly specialized exact algorithms for large-scale power network operations. Power grids are among the most complex engineered systems, requiring energy delivery from producers to consumers while satisfying physical constraints and minimizing operating costs.\nThe project addresses one of the most challenging optimization problems in industry: the Optimal Power Flow (OPF) problem, which becomes a Mixed Integer Nonlinear Optimization (MINLP) problem when discrete operational decisions are included.\nWithin this context, my research explored the use of surrogate models based on Neural Networks and Graph Neural Networks to approximate solutions of bilevel optimization problems in power systems. The goal is to reduce the computational cost of repeated exact solver evaluations and improve real-time decision support tools for grid management.\n🧪 Methods \u0026 Technologies The research activities combined theoretical analysis, dataset generation, and surrogate model development:\nTheoretical study: In-depth review of AC Optimal Power Flow (ACOPF), bilevel optimization, RCOPF formulations, surrogate modeling, and graph-based learning, including graph convolutional networks and hypergraph learning. Dataset generation: Creation of perturbed instances of IEEE test networks, solving each instance using Gurobi to produce input-output pairs for training surrogate models. Automation scripts handled perturbations, solver execution, feasibility checks, and data normalization. HPC resources were used to manage computationally intensive tasks, though scalability was limited to small networks (up to IEEE 57-bus). Surrogate model development: Initial experiments with feed-forward neural networks showed low prediction errors on small networks. Graph Convolutional Networks (GCNs) were then implemented to exploit grid topology, though they faced limitations in generalizing to larger networks. Hyperparameter tuning was performed using Ray Tune, and all code is organized in a reproducible GitHub repository for training and evaluation. Technologies used: Python, Julia, Gurobi, high-performance computing environments, Neural Networks, Graph Neural Networks, Ray Tune.\n⚙️ My Role I contributed to the HEXAGON project as part of a collaborative effort involving multiple Italian universities, aiming to equip practitioners with scalable optimization tools for power grids. My responsibilities included:\nStudying the ACOPF problem and understanding its mathematical structure, numerical behavior, and solver limitations. Focusing on Transformer Rating Optimization (TRO) as a bilevel problem with RCOPF follower. Designing and evaluating surrogate models (feed-forward NNs and GCNs) to approximate RCOPF solutions under varying network parameters. Constructing datasets for model training through automated pipelines using Gurobi and HPC resources. Documenting results, analyzing performance trends, and maintaining reproducible scripts and notebooks. This work contributed both to methodological insights in surrogate modeling and to understanding the practical limitations of exact solvers for large-scale OPF problems.\n📈 Outcomes The research highlighted the potential and challenges of surrogate models for bilevel optimization in power systems:\nSmall-scale surrogate models achieved good accuracy in approximating RCOPF solutions. Dataset generation for training remains computationally intensive, limiting scalability to larger networks. Extensive analyses clarified the limitations of standard GCN architectures for capturing power grid topologies. The work produced a complete, reproducible computational framework for dataset generation, model training, and evaluation. Although large-scale scalable models were not achieved, the project provided valuable methodological insights and a solid foundation for future research, including alternative solvers, approximation schemes, and more expressive neural architectures.\n🏷️ Research Areas Power Systems · Machine Learning · Optimization · Graph Neural Networks · High-Performance Computing\n🔗 Links 📄 Related Paper: (coming soon) 💻 GitHub: https://github.com/your-repo 🌍 Demo / Documentation: (to be added) ",
+  "wordCount" : "566",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/images/profile.jpg","datePublished": "2024-08-01T00:00:00Z",
+  "dateModified": "2024-08-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Claudio Tomasi"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/projects/acopf-solver/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Claudio Tomasi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Claudio Tomasi (Alt + H)">Claudio Tomasi</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/cv/" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+  <article class="project-single">
+
+    <header class="project-single-header">
+    <a class="back-link" href="javascript:history.back()">← Back</a>
+    <h1>Surrogate Modeling for Power Grid Optimization</h1>
+
+
+      
+
+      
+        <div class="project-single-image">
+          <img src="/images/projects/hexagon.png" alt="Surrogate Modeling for Power Grid Optimization">
+        </div>
+      
+
+      
+        <div class="project-tags">
+          
+            <a class="project-tag" href="/tags/optimization">optimization</a>
+          
+            <a class="project-tag" href="/tags/power-systems">power-systems</a>
+          
+            <a class="project-tag" href="/tags/machine-learning">machine-learning</a>
+          
+            <a class="project-tag" href="/tags/graph-neural-networks">graph-neural-networks</a>
+          
+            <a class="project-tag" href="/tags/bilevel-optimization">bilevel-optimization</a>
+          
+            <a class="project-tag" href="/tags/neural-networks">neural-networks</a>
+          
+            <a class="project-tag" href="/tags/python">Python</a>
+          
+            <a class="project-tag" href="/tags/julia">Julia</a>
+          
+        </div>
+      
+
+    </header>
+
+    <div class="post-content">
+      <div class="justify">
+<h2 id="-overview">🧠 Overview</h2>
+<p>This work was conducted within the <strong>HEXAGON Project</strong> (PRIN-PNRR grant P20227CTY3) at the <strong>Università degli Studi di Bergamo</strong>. HEXAGON focuses on developing highly specialized <strong>exact algorithms for large-scale power network operations</strong>. Power grids are among the most complex engineered systems, requiring energy delivery from producers to consumers while satisfying physical constraints and minimizing operating costs.</p>
+<p>The project addresses one of the most challenging optimization problems in industry: the Optimal Power Flow (OPF) problem, which becomes a Mixed Integer Nonlinear Optimization (MINLP) problem when discrete operational decisions are included.</p>
+<p>Within this context, my research explored the use of surrogate models based on Neural Networks and Graph Neural Networks to approximate solutions of bilevel optimization problems in power systems. The goal is to reduce the computational cost of repeated exact solver evaluations and improve real-time decision support tools for grid management.</p>
+<hr>
+<h2 id="-methods--technologies">🧪 Methods &amp; Technologies</h2>
+<p>The research activities combined theoretical analysis, dataset generation, and surrogate model development:</p>
+<ul>
+<li><strong>Theoretical study:</strong> In-depth review of AC Optimal Power Flow (ACOPF), bilevel optimization, RCOPF formulations, surrogate modeling, and graph-based learning, including graph convolutional networks and hypergraph learning.</li>
+<li><strong>Dataset generation:</strong> Creation of perturbed instances of IEEE test networks, solving each instance using Gurobi to produce input-output pairs for training surrogate models. Automation scripts handled perturbations, solver execution, feasibility checks, and data normalization. HPC resources were used to manage computationally intensive tasks, though scalability was limited to small networks (up to IEEE 57-bus).</li>
+<li><strong>Surrogate model development:</strong> Initial experiments with feed-forward neural networks showed low prediction errors on small networks. Graph Convolutional Networks (GCNs) were then implemented to exploit grid topology, though they faced limitations in generalizing to larger networks. Hyperparameter tuning was performed using Ray Tune, and all code is organized in a reproducible GitHub repository for training and evaluation.</li>
+</ul>
+<p><strong>Technologies used:</strong> Python, Julia, Gurobi, high-performance computing environments, Neural Networks, Graph Neural Networks, Ray Tune.</p>
+<hr>
+<h2 id="-my-role">⚙️ My Role</h2>
+<p>I contributed to the HEXAGON project as part of a collaborative effort involving multiple Italian universities, aiming to equip practitioners with scalable optimization tools for power grids. My responsibilities included:</p>
+<ul>
+<li>Studying the ACOPF problem and understanding its mathematical structure, numerical behavior, and solver limitations.</li>
+<li>Focusing on Transformer Rating Optimization (TRO) as a bilevel problem with RCOPF follower.</li>
+<li>Designing and evaluating surrogate models (feed-forward NNs and GCNs) to approximate RCOPF solutions under varying network parameters.</li>
+<li>Constructing datasets for model training through automated pipelines using Gurobi and HPC resources.</li>
+<li>Documenting results, analyzing performance trends, and maintaining reproducible scripts and notebooks.</li>
+</ul>
+<p>This work contributed both to methodological insights in surrogate modeling and to understanding the practical limitations of exact solvers for large-scale OPF problems.</p>
+<hr>
+<h2 id="-outcomes">📈 Outcomes</h2>
+<p>The research highlighted the potential and challenges of surrogate models for bilevel optimization in power systems:</p>
+<ul>
+<li>Small-scale surrogate models achieved good accuracy in approximating RCOPF solutions.</li>
+<li>Dataset generation for training remains computationally intensive, limiting scalability to larger networks.</li>
+<li>Extensive analyses clarified the limitations of standard GCN architectures for capturing power grid topologies.</li>
+<li>The work produced a complete, reproducible computational framework for dataset generation, model training, and evaluation.</li>
+</ul>
+<p>Although large-scale scalable models were not achieved, the project provided valuable methodological insights and a solid foundation for future research, including alternative solvers, approximation schemes, and more expressive neural architectures.</p>
+<hr>
+<h2 id="-research-areas">🏷️ Research Areas</h2>
+<p>Power Systems · Machine Learning · Optimization · Graph Neural Networks · High-Performance Computing</p>
+<hr>
+<h2 id="-links">🔗 Links</h2>
+<ul>
+<li>📄 <strong>Related Paper:</strong> <em>(coming soon)</em></li>
+<li>💻 <strong>GitHub:</strong> <a href="https://github.com/your-repo">https://github.com/your-repo</a></li>
+<li>🌍 <strong>Demo / Documentation:</strong> <em>(to be added)</em></li>
+</ul>
+</div>
+    </div>
+
+  </article>
+
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Claudio Tomasi</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><div class="footer-socials">
+  <a target="_blank" href="https://github.com/claudiotomasi" class="social-icon" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a target="_blank" href="https://www.linkedin.com/in/claudiotomasi" class="social-icon" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+
+  <a target="_blank" href="https://scholar.google.ch/citations?user=sNxIyPwAAAAJ" class="social-icon" aria-label="Google Scholar">
+    <i class="fas fa-graduation-cap"></i>
+  </a>
+
+  <a target="_blank" href="mailto:claudio.tomasi93@gmail.com" class="social-icon" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
+
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on Claudio Tomasi</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in Projects on Claudio Tomasi</description>
+    <image>
+      <title>Claudio Tomasi</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Surrogate Modeling for Power Grid Optimization</title>
+      <link>http://localhost:1313/projects/acopf-solver/</link>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/acopf-solver/</guid>
+      <description>Neural and graph neural networks for bilevel optimization in electrical power grids.</description>
+    </item>
+    <item>
+      <title>EU Road Accessibility &amp; EV Charging Coverage Analysis</title>
+      <link>http://localhost:1313/projects/eu-road-accessibility/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/eu-road-accessibility/</guid>
+      <description>Large-scale accessibility and electric vehicle charging coverage analysis on European road networks using graph algorithms and geospatial data.</description>
+    </item>
+    <item>
+      <title>VelociRAPTOR – High-Performance Multimodal Route Planner</title>
+      <link>http://localhost:1313/projects/velociraptor/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/velociraptor/</guid>
+      <description>A high-performance C&#43;&#43; engine for large-scale multimodal public transport routing based on the RAPTOR algorithm.</description>
+    </item>
+    <item>
+      <title>Neural Multigrid – Machine Learning for Multilevel Solvers</title>
+      <link>http://localhost:1313/projects/neural-multigrid/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/neural-multigrid/</guid>
+      <description>PhD research on the use of neural networks to construct transfer operators for multilevel solvers in scientific computing.</description>
+    </item>
+    <item>
+      <title>Multilevel Monte Carlo for Random Fracture Networks</title>
+      <link>http://localhost:1313/projects/mlmc-fracture-networks/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/mlmc-fracture-networks/</guid>
+      <description>Multilevel Monte Carlo methods for uncertainty quantification in random underground fracture networks for geothermal applications.</description>
+    </item>
+  </channel>
+</rss>

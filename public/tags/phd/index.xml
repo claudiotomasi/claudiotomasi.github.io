@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Phd on Claudio Tomasi</title>
+    <link>http://localhost:1313/tags/phd/</link>
+    <description>Recent content in Phd on Claudio Tomasi</description>
+    <image>
+      <title>Claudio Tomasi</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/phd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neural Multigrid – Machine Learning for Multilevel Solvers</title>
+      <link>http://localhost:1313/projects/neural-multigrid/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/neural-multigrid/</guid>
+      <description>PhD research on the use of neural networks to construct transfer operators for multilevel solvers in scientific computing.</description>
+    </item>
+  </channel>
+</rss>

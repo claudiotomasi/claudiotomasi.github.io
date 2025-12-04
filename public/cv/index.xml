@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Curriculum Vitae on My New Hugo Site</title>
+    <link>//localhost:1313/cv/</link>
+    <description>Recent content in Curriculum Vitae on My New Hugo Site</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <atom:link href="//localhost:1313/cv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Education</title>
+      <link>//localhost:1313/cv/education/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/cv/education/</guid>
+      <description>&lt;h3 id=&#34;phd-in-something&#34;&gt;Ph.D. in Something&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;University Name&lt;/strong&gt; (2018–2022)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Thesis: Something interesting&lt;/li&gt;
+&lt;li&gt;Coursework: X, Y, Z&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;msc-in-something&#34;&gt;M.Sc. in Something&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Other University&lt;/strong&gt; (2016–2018)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Specialization: Optimization&lt;/li&gt;
+&lt;li&gt;Graduated with honors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;bsc-in-something&#34;&gt;B.Sc. in Something&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;University&lt;/strong&gt; (2013–2016)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Focus: Algorithms, etc.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Experience</title>
+      <link>//localhost:1313/cv/experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/cv/experience/</guid>
+      <description>&lt;h3 id=&#34;postdoctoral-researcher&#34;&gt;Postdoctoral Researcher&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Institution&lt;/strong&gt; (2023–Present)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Working on optimization problems&lt;/li&gt;
+&lt;li&gt;Developing high-performance solvers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;research-assistant&#34;&gt;Research Assistant&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;University&lt;/strong&gt; (2020–2023)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Experimental graph algorithms research&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;intern&#34;&gt;Intern&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Company&lt;/strong&gt; (2019)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data analysis&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

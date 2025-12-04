@@ -1,0 +1,804 @@
+
+.cv-card {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--entry);
+  /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);*/
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12)
+}
+
+.cv-card[open] {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.cv-card summary {
+  list-style: none;
+  outline: none;
+}
+
+.cv-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.cv-card summary strong {
+  font-size: 1.1rem;
+}
+
+.cv-card summary small {
+  color: var(--secondary);
+}
+
+.cv-card summary::after {
+  content: "▾";
+  float: right;
+  transform: translateY(-2px);
+  opacity: 0.7;
+}
+
+.cv-card[open] summary::after {
+  content: "▴";
+}
+
+
+
+.cv-entry {
+  margin-bottom: 1.2rem;
+}
+
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;        /* Important for mobile */
+}
+
+.cv-date {
+  font-style: italic;
+  white-space: nowrap;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+
+.cv-list {
+  margin: 0.3rem 0 0 1.2rem; /* indent & spacing */
+  padding: 0;
+}
+
+.cv-list li {
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+  font-style: italic;   /* ← makes list text italic */
+}
+
+
+
+
+.see-more {
+  font-size: 0.9rem;
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.see-more:hover {
+  text-decoration: underline;
+}
+
+.cv-separator {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0.8rem 0 1rem 0;
+  opacity: 0.7;
+}
+
+
+/* ====== GLOBAL WIDTH CONTROL ====== */
+
+/* Increase max content width */
+.main {
+  max-width: calc(var(--main-width) *1.1 + var(--gap) * 2);
+}
+
+/* Make homepage hero layout horizontal */
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;  /* photo goes to the RIGHT */
+  gap: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+/* Profile image */
+
+.home-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  display: block;
+}
+
+
+/* Compact link row */
+.home-links a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-links a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure good behavior on small screens */
+@media (max-width: 768px) {
+  .home-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+
+
+/*.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.post-entry {
+    margin-bottom: var(--gap);
+    padding: var(--gap);
+    background: var(--entry);
+    border-radius: var(--radius);
+    transition: transform .1s
+    width: 32%;
+    padding-bottom: 32%; /* Same as width, sets height */
+/*    margin-bottom: 2%; /* (100-32*3)/2 */
+   /* position: relative;
+}*/*/
+
+
+/* ===== SKILLS (INLINE BACKGROUND-SIZE VERSION) ===== */
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.9rem;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.skill-name {
+  font-weight: 500;
+}
+
+.skill-value {
+  color: var(--secondary);
+  font-size: 0.85rem;
+}
+
+.skill-bar {
+  height: 8px;
+  width: 100%;
+  border-radius: 999px;
+
+  /* empty track */
+  background-color: rgba(150,150,150,0.25);
+
+  /* filled part */
+  background-image: linear-gradient(#4aa3ff, #4aa3ff);
+  background-repeat: no-repeat;
+
+  transition: background-size 0.4s ease;
+}
+
+/* ===== SKILLS GRID LAYOUT ===== */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Individual sub-skill boxes */
+.skills-box {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+  background: var(--entry);
+}
+
+/* Skill section titles inside boxes */
+.skills-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+/* Mobile: stack in one column */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== PROJECTS GRID ===== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 1rem; /* keep card rounded */
+  background: var(--entry);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.project-card a {
+  display: block;
+  padding: 1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-thumb {
+  width: 100%;
+  height: 160px;       /* adjust height as needed */
+  overflow: hidden;
+  border-radius: 0;    /* remove rounding */
+  margin-bottom: 0.7rem;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills the div, crops if needed */
+  display: block;
+}
+
+.project-card h2 {
+  margin: 0.4rem 0;
+  font-size: 1.15rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
+.project-tags {
+  /*margin-top: 0.6rem;*/
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--code-bg);
+}
+
+/* Mobile: 1 column */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* ===== PROJECT SINGLE PAGE ===== */
+
+.project-single-header {
+  margin-bottom: 2rem;
+}
+
+.project-single-summary {
+  font-size: 1rem;
+  color: var(--secondary);
+  margin-top: 0.4rem;
+}
+
+.project-single-image {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.project-single-image img {
+  display: block;
+  max-width: 100%;    /* never stretch beyond natural size or container */
+  width: auto;        /* use natural width if smaller than container */
+  height: auto;       /* keep aspect ratio */
+  margin-left: auto;
+  margin-right: auto; /* center if not full width */
+  object-fit: cover;  /* still crop if container smaller than image */
+}
+
+
+
+/* ===== BACK LINKS (PROJECTS & POSTS) ===== */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== CV DOWNLOAD BUTTON ===== */
+
+.cv-download {
+  display: inline-block;
+  /*margin-bottom: 1.4rem;*/
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-size: 0.9rem;
+  background: var(--entry);
+  color: var(--content);
+   /* 3D effect */
+  box-shadow: 0 4px 0 var(--border), 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.cv-download:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--border), 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.cv-download:hover {
+  opacity: 0.85;
+}
+
+/* ===== STICKY NAVBAR ===== */
+
+/* ===== STICKY NAVBAR (MATCH PAGE BACKGROUND) ===== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--background);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* Offset for sticky header */
+.main {
+  padding-top: 1.2rem;
+}
+
+
+/* ===== CV EXPAND / COLLAPSE CONTROLS ===== */
+
+.cv-controls {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cv-controls button {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--entry);
+  color: var(--content);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.cv-controls button:hover {
+  opacity: 0.85;
+}
+/* === Featured Projects Grid (Home) === */
+
+.featured-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.featured-card {
+  background: var(--entry);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  transition: transform .2s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+}
+
+.featured-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin-top : 0;
+}
+
+.featured-body {
+  padding: 0-0 1.3rem 1.4rem;
+}
+
+.featured-body h3 {
+  margin: 0 0 .4rem;
+  font-size: 1.1rem;
+}
+
+.featured-body p {
+  font-size: .95rem;
+  opacity: .85;
+}
+
+.featured-tags {
+  margin-top: .6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+
+.featured-tags span {
+  background: var(--tertiary);
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  font-size: .75rem;
+}
+
+.project-card {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+
+.project-card-body {
+  padding: 1rem;
+}
+
+.project-card-body h3 {
+  margin: 0 0 .4rem 0;
+  font-size: 1.05rem;
+}
+
+.project-card-body p {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .featured-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+.project-timeline {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-timeline li {
+  padding: .6rem 0;
+  border-left: 3px solid var(--border);
+  padding-left: 1rem;
+  margin-left: .5rem;
+}
+
+/* ===== HOME NAV BUTTONS ===== */
+/*.home-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.home-btn {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--entry);
+  color: var(--content);
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}*/
+
+.home-socials {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--entry);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.social-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+/* === Dark mode fix for social buttons (PaperMod uses data-theme on <html>) === */
+
+html[data-theme="dark"] .social-btn {
+  background: #181818;          /* darker fill, not washed grey */
+  border: 0px solid #444;       /* softer border, not bright */
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .social-btn img {
+  filter: brightness(1.12) contrast(1.05);  /* make icons a bit clearer */
+}
+
+html[data-theme="dark"] .social-btn:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,.6);
+  background: #222;
+}
+
+
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--entry);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--fg);
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  background: var(--entry-hover);
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+}
+
+.footer-socials a {
+  color: var(--primary);
+}
+
+.footer-socials a:hover {
+  opacity: 0.7;
+}
+
+.justify {
+    text-align: justify;
+}
+
+
+/* Remove all box-shadows from home social buttons */
+.home-socials .social-icon {
+  box-shadow: none !important;
+}
+
+.home-socials .social-icon:hover {
+  box-shadow: none !important;
+}
+
+
+
+
+/* ===== CV PAGE BACKGROUND FIX ===== */
+
+/*.cv {
+  background: transparent !important;
+  box-shadow: none !important;
+}*/
+
+.cv {
+  background: var(--code-bg) !important;
+}
+
+
+.project-section summary {
+    list-style: none; /* remove default marker */
+    display: flex;    /* make content and marker inline */
+    align-items: center; /* vertically center */
+    cursor: pointer;
+}
+
+/* re-add a triangle manually if needed */
+.project-section summary::marker {
+    content: ''; /* remove default marker if you want custom */
+}
+
+/* optional: add custom triangle using ::before */
+.project-section summary::before {
+    content: "▶"; /* right-pointing triangle */
+    display: inline-block;
+    margin-right: 0.5em;
+    transition: transform 0.2s ease;
+}
+
+/* rotate triangle when open */
+.project-section[open] summary::before {
+    transform: rotate(90deg);
+}
+
+
+
+/* Center all project controls */
+.project-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* 3D buttons */
+.project-controls button {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--entry);
+  color: var(--content);
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  /* 3D look */
+  box-shadow: 0 4px 0 var(--border);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* Pressed animation */
+.project-controls button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.cv-controls .arrow {
+  margin-left: 0.35rem;
+  font-size: 0.85em;
+  vertical-align: middle;
+}
+.cv-controls button .label {
+  font-weight: 600;
+}
+
+
+
+/* Mobile menu tweaks */
+@media (max-width: 768px) {
+  /* Make menu items bigger and more touch-friendly */
+  .menu-mobile a {
+    padding: 1rem 1.2rem;
+    font-size: 1.05rem;
+    text-align: center; /* center text */
+  }
+
+  /* Increase spacing between items */
+  .menu-mobile li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Make hamburger icon bigger */
+  .menu-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /* Optional: add subtle background on hover/tap */
+  .menu-mobile a:hover {
+    background-color: var(--entry);
+    border-radius: 12px;
+  }
+}
+
+/*body {
+  background: var(--code-bg) !important;
+}*/
+
+.project-tags-and-github {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /*margin-top: 0.75rem;*/
+}
+
+.project-github img {
+  border-radius: 8px; /* Adjust the px value as you like */
+  transition: transform 0.2s ease; /* optional, for hover effect */
+}
+
+.project-github img:hover {
+  transform: scale(1.05); /* optional, subtle hover zoom */
+}
+
+@media (max-width: 768px) { /* adjust breakpoint as needed */
+  .project-github img {
+    max-width: none;      /* remove the global max-width */
+  }
+}
+
+

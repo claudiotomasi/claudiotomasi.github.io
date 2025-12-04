@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Neural Multigrid – Machine Learning for Multilevel Solvers | Claudio Tomasi</title>
+<meta name="keywords" content="machine-learning, numerical-analysis, multigrid, phd, scientific-computing">
+<meta name="description" content="PhD research on the use of neural networks to construct transfer operators for multilevel solvers in scientific computing.">
+<meta name="author" content="Claudio Tomasi">
+<link rel="canonical" href="http://localhost:1313/projects/neural-multigrid/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d74e7a50cc974e00fdba0ae96191abb6ce3ea08ea01dcb0834ab41b6501ee916.css" integrity="sha256-1056UMyXTgD9ugrpYZGrts4&#43;oI6gHcsINKtBtlAe6RY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/neural-multigrid/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script src="https://kit.fontawesome.com/938a6d34ff.js" crossorigin="anonymous"></script><meta property="og:url" content="http://localhost:1313/projects/neural-multigrid/">
+  <meta property="og:site_name" content="Claudio Tomasi">
+  <meta property="og:title" content="Neural Multigrid – Machine Learning for Multilevel Solvers">
+  <meta property="og:description" content="PhD research on the use of neural networks to construct transfer operators for multilevel solvers in scientific computing.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2022-01-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-01-01T00:00:00+00:00">
+    <meta property="article:tag" content="Machine-Learning">
+    <meta property="article:tag" content="Numerical-Analysis">
+    <meta property="article:tag" content="Multigrid">
+    <meta property="article:tag" content="Phd">
+    <meta property="article:tag" content="Scientific-Computing">
+      <meta property="og:image" content="http://localhost:1313/images/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/images/profile.jpg">
+<meta name="twitter:title" content="Neural Multigrid – Machine Learning for Multilevel Solvers">
+<meta name="twitter:description" content="PhD research on the use of neural networks to construct transfer operators for multilevel solvers in scientific computing.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "http://localhost:1313/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Neural Multigrid – Machine Learning for Multilevel Solvers",
+      "item": "http://localhost:1313/projects/neural-multigrid/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Neural Multigrid – Machine Learning for Multilevel Solvers",
+  "name": "Neural Multigrid – Machine Learning for Multilevel Solvers",
+  "description": "PhD research on the use of neural networks to construct transfer operators for multilevel solvers in scientific computing.",
+  "keywords": [
+    "machine-learning", "numerical-analysis", "multigrid", "phd", "scientific-computing"
+  ],
+  "articleBody": "🧠 Overview This project corresponds to my PhD research activity, focused on the use of Neural Networks to automatically construct transfer operators for multilevel (multigrid) solvers.\nMultigrid methods are among the most efficient solvers for large sparse systems arising from the discretization of partial differential equations (PDEs). However, their effectiveness strongly depends on the quality of the inter-grid transfer operators, which are traditionally handcrafted.\nThe goal of this project was to learn these operators directly from data, enabling more flexible and potentially more efficient multilevel solvers.\n🧪 Methods \u0026 Technologies Supervised learning for operator regression Dataset generation from numerical PDE solvers Convolutional and feed-forward neural networks Multilevel numerical methods Scientific visualization of learned operators Tools \u0026 Languages:\nPython · TensorFlow · NumPy · SciPy · MATLAB · Scientific Computing\n⚙️ My Role Designed the full machine learning pipeline for operator learning Generated large datasets from numerical solvers Trained neural networks for coarse-grid operator approximation Integrated learned operators into multilevel solver frameworks Performed extensive numerical validation and benchmarking Developed visualization tools for learned operators 📈 Outcomes Successfully demonstrated the feasibility of data-driven multigrid construction Published results in: Springer LNCSE 145 (2023) Opened new research directions at the intersection of: Machine learning Numerical analysis Scientific computing 🏷️ Research Areas Machine Learning · Multigrid Methods · Scientific Computing · Numerical Linear Algebra\n🔗 Links 📄 Related Paper: (coming soon) 💻 GitHub: https://github.com/your-repo 🌍 Demo / Documentation: (to be added) ",
+  "wordCount" : "236",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/images/profile.jpg","datePublished": "2022-01-01T00:00:00Z",
+  "dateModified": "2022-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Claudio Tomasi"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/projects/neural-multigrid/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Claudio Tomasi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Claudio Tomasi (Alt + H)">Claudio Tomasi</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/cv/" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+  <article class="project-single">
+
+    <header class="project-single-header">
+    <a class="back-link" href="javascript:history.back()">← Back</a>
+    <h1>Neural Multigrid – Machine Learning for Multilevel Solvers</h1>
+
+
+      
+
+      
+
+      
+        <div class="project-tags">
+          
+            <a class="project-tag" href="/tags/machine-learning">machine-learning</a>
+          
+            <a class="project-tag" href="/tags/numerical-analysis">numerical-analysis</a>
+          
+            <a class="project-tag" href="/tags/multigrid">multigrid</a>
+          
+            <a class="project-tag" href="/tags/phd">phd</a>
+          
+            <a class="project-tag" href="/tags/scientific-computing">scientific-computing</a>
+          
+        </div>
+      
+
+    </header>
+
+    <div class="post-content">
+      <h2 id="-overview">🧠 Overview</h2>
+<p>This project corresponds to my <strong>PhD research activity</strong>, focused on the use of <strong>Neural Networks to automatically construct transfer operators for multilevel (multigrid) solvers</strong>.</p>
+<p>Multigrid methods are among the most efficient solvers for large sparse systems arising from the discretization of partial differential equations (PDEs). However, their effectiveness strongly depends on the quality of the <strong>inter-grid transfer operators</strong>, which are traditionally handcrafted.</p>
+<p>The goal of this project was to <strong>learn these operators directly from data</strong>, enabling more flexible and potentially more efficient multilevel solvers.</p>
+<hr>
+<h2 id="-methods--technologies">🧪 Methods &amp; Technologies</h2>
+<ul>
+<li>Supervised learning for operator regression</li>
+<li>Dataset generation from numerical PDE solvers</li>
+<li>Convolutional and feed-forward neural networks</li>
+<li>Multilevel numerical methods</li>
+<li>Scientific visualization of learned operators</li>
+</ul>
+<p><strong>Tools &amp; Languages:</strong><br>
+Python · TensorFlow · NumPy · SciPy · MATLAB · Scientific Computing</p>
+<hr>
+<h2 id="-my-role">⚙️ My Role</h2>
+<ul>
+<li>Designed the full <strong>machine learning pipeline</strong> for operator learning</li>
+<li>Generated large datasets from numerical solvers</li>
+<li>Trained neural networks for <strong>coarse-grid operator approximation</strong></li>
+<li>Integrated learned operators into multilevel solver frameworks</li>
+<li>Performed extensive <strong>numerical validation and benchmarking</strong></li>
+<li>Developed visualization tools for learned operators</li>
+</ul>
+<hr>
+<h2 id="-outcomes">📈 Outcomes</h2>
+<ul>
+<li>Successfully demonstrated the feasibility of <strong>data-driven multigrid construction</strong></li>
+<li>Published results in:
+<ul>
+<li>Springer LNCSE 145 (2023)</li>
+</ul>
+</li>
+<li>Opened new research directions at the intersection of:
+<ul>
+<li>Machine learning</li>
+<li>Numerical analysis</li>
+<li>Scientific computing</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-research-areas">🏷️ Research Areas</h2>
+<p>Machine Learning · Multigrid Methods · Scientific Computing · Numerical Linear Algebra</p>
+<hr>
+<h2 id="-links">🔗 Links</h2>
+<ul>
+<li>📄 <strong>Related Paper:</strong> <em>(coming soon)</em></li>
+<li>💻 <strong>GitHub:</strong> <a href="https://github.com/your-repo">https://github.com/your-repo</a></li>
+<li>🌍 <strong>Demo / Documentation:</strong> <em>(to be added)</em></li>
+</ul>
+
+    </div>
+
+  </article>
+
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Claudio Tomasi</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><div class="footer-socials">
+  <a target="_blank" href="https://github.com/claudiotomasi" class="social-icon" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a target="_blank" href="https://www.linkedin.com/in/claudiotomasi" class="social-icon" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+
+  <a target="_blank" href="https://scholar.google.ch/citations?user=sNxIyPwAAAAJ" class="social-icon" aria-label="Google Scholar">
+    <i class="fas fa-graduation-cap"></i>
+  </a>
+
+  <a target="_blank" href="mailto:claudio.tomasi93@gmail.com" class="social-icon" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
+
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

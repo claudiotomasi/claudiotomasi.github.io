@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Accessibility on Claudio Tomasi</title>
+    <link>http://localhost:1313/tags/accessibility/</link>
+    <description>Recent content in Accessibility on Claudio Tomasi</description>
+    <image>
+      <title>Claudio Tomasi</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/accessibility/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EU Road Accessibility &amp; EV Charging Coverage Analysis</title>
+      <link>http://localhost:1313/projects/eu-road-accessibility/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/eu-road-accessibility/</guid>
+      <description>Large-scale accessibility and electric vehicle charging coverage analysis on European road networks using graph algorithms and geospatial data.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <article class="post-single">
+
+    <header class="post-single-header">
+    <a class="back-link" href="javascript:history.back()">← Back</a>
+    <h1>{{ .Title }}</h1>
+
+
+      <div class="post-meta">
+        {{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read
+      </div>
+
+      {{ with .Params.image }}
+        <div class="project-single-image">
+          <img src="{{ . }}" alt="{{ $.Title }}">
+        </div>
+      {{ end }}
+    </header>
+
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+
+  </article>
+{{ end }}

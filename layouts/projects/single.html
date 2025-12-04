@@ -1,0 +1,45 @@
+{{ define "main" }}
+<article class="project-single">
+
+  <header class="project-single-header">
+    <a class="back-link" href="javascript:history.back()">← Back</a>
+    <h1>{{ .Title }}</h1>
+
+    {{ with .Params.summary }}
+      <p class="project-single-summary">{{ . }}</p>
+    {{ end }}
+
+    {{ with .Params.image }}
+      <div class="project-single-image">
+        <img src="{{ . }}" alt="{{ $.Title }}">
+      </div>
+    {{ end }}
+
+    {{ with .Params.tags }}
+      <div class="project-tags-and-github">
+
+        <div class="project-tags">
+          {{ range . }}
+            <a class="project-tag" href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+          {{ end }}
+        </div>
+
+        {{ with $.Params.repo }}
+          <div class="project-github">
+            <a href="{{ .link }}" target="_blank">
+              <img src="{{ printf "https://img.shields.io/badge/GitHub-%s-black?logo=github" .name }}" alt="GitHub Repo">
+            </a>
+          </div>
+        {{ end }}
+
+      </div>
+    {{ end }}
+
+  </header>
+
+  <div class="post-content justify">
+    {{ .Content }}
+  </div>
+
+</article>
+{{ end }}

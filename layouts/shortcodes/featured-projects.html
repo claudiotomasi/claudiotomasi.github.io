@@ -1,0 +1,46 @@
+<div class="featured-projects-grid">
+
+  {{- $projects := where site.RegularPages "Type" "projects" -}}
+  {{- $featured := where $projects ".Params.featured" true -}}
+
+  {{- range first 3 $featured }}
+
+    <article class="featured-card">
+
+      {{- $img := "" -}}
+
+      {{- if .Params.image -}}
+        {{- $img = .Params.cover_image -}}
+      {{- else if .Params.cover.image -}}
+        {{- $img = .Params.cover.image -}}
+      {{- end -}}
+
+      {{- if $img }}
+        <a href="{{ .RelPermalink }}" class="featured-image">
+          <img src="{{ $img | relURL }}" alt="{{ .Title }}">
+        </a>
+      {{- end }}
+
+      <div class="featured-body">
+        <h3>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h3>
+
+        {{ with .Params.summary }}
+          <p>{{ . }}</p>
+        {{ end }}
+
+        {{ with .Params.tags }}
+          <div class="featured-tags">
+            {{ range . }}
+              <span>{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+
+    </article>
+
+  {{- end }}
+
+</div>

@@ -1,0 +1,52 @@
+# git submodule update --remote --mergebaseURL: https://example.org/
+languageCode: en-us
+baseURL: "https://claudiotomasi.github.io/"
+title: Claudio Tomasi 
+theme: "PaperMod"
+
+menu:
+  main:
+    - identifier: home
+      name: "Home"
+      url: "/"
+      weight: 1
+
+    - identifier: cv
+      name: "CV"
+      url: "/cv/"
+      weight: 2
+
+    - identifier: projects
+      name: "Projects"
+      url: "/projects/"
+      weight: 3
+
+    # - identifier: posts
+    #   name: "Blog"
+    #   url: "/posts/"
+    #   weight: 4
+
+    # - identifier: about
+    #   name: "About"
+    #   url: "/about/"
+    #   weight: 5
+
+    - name: "Tags"
+      url: "/tags/"
+      weight: 40
+
+params:
+  mainSections: []
+  ShowBreadCrumbs: false
+  description: "Researcher in optimization, algorithms, power systems, and transport networks."
+  author: "Claudio Tomasi"
+  title: "Claudio Tomasi"
+  images:
+    - "/images/profile.jpg"
+  env: production   # tells PaperMod to output SEO/OG meta
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+

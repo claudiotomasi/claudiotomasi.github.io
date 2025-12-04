@@ -1,0 +1,10 @@
+<ul class="project-timeline">
+  {{ range .Site.RegularPages.ByDate.Reverse }}
+  {{ if eq .Section "projects" }}
+  <li>
+    <strong>{{ .Date.Format "2006" }}</strong> —
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+  {{ end }}
+</ul>

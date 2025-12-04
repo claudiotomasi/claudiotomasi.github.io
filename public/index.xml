@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Home on Claudio Tomasi</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Claudio Tomasi</description>
+    <image>
+      <title>Claudio Tomasi</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Hi! I&amp;rsquo;m &lt;strong&gt;Claudio Tomasi&lt;/strong&gt;, a researcher working in optimization, algorithms, and computational modeling.&lt;/p&gt;
+&lt;p&gt;This page will become your CV / About section.&lt;/p&gt;
+&lt;p&gt;You can add:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Education&lt;/li&gt;
+&lt;li&gt;Work experience&lt;/li&gt;
+&lt;li&gt;Skills&lt;/li&gt;
+&lt;li&gt;Publications&lt;/li&gt;
+&lt;li&gt;Anything else&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;home-socials&#34;&gt;
+  &lt;a class=&#34;social-btn&#34; href=&#34;https://github.com/YOUR_GITHUB&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;https://www.google.com/s2/favicons?domain=github.com&amp;sz=64&#34; alt=&#34;GitHub&#34;&gt;
+  &lt;/a&gt;
+  &lt;a class=&#34;social-btn&#34; href=&#34;https://www.linkedin.com/in/YOUR_LINKEDIN&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;https://www.google.com/s2/favicons?domain=linkedin.com&amp;sz=64&#34; alt=&#34;LinkedIn&#34;&gt;
+  &lt;/a&gt;
+  &lt;a class=&#34;social-btn&#34; href=&#34;https://scholar.google.com/citations?user=YOUR_ID&#34; target=&#34;_blank&#34;&gt;
+    &lt;img src=&#34;https://www.google.com/s2/favicons?domain=scholar.google.com&amp;sz=64&#34; alt=&#34;Scholar&#34;&gt;
+  &lt;/a&gt;
+  &lt;a class=&#34;social-btn&#34; href=&#34;mailto:your@email.com&#34;&gt;
+    &lt;img src=&#34;https://www.google.com/s2/favicons?domain=gmail.com&amp;sz=64&#34; alt=&#34;Email&#34;&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>My first blog post using Hugo PaperMod.</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/posts/hello-world2/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hello-world2/</guid>
+      <description>My first blog post using Hugo PaperMod.</description>
+    </item>
+    <item>
+      <title>Surrogate Modeling for Power Grid Optimization</title>
+      <link>http://localhost:1313/projects/acopf-solver/</link>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/acopf-solver/</guid>
+      <description>Neural and graph neural networks for bilevel optimization in electrical power grids.</description>
+    </item>
+    <item>
+      <title>EU Road Accessibility &amp; EV Charging Coverage Analysis</title>
+      <link>http://localhost:1313/projects/eu-road-accessibility/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/eu-road-accessibility/</guid>
+      <description>Large-scale accessibility and electric vehicle charging coverage analysis on European road networks using graph algorithms and geospatial data.</description>
+    </item>
+    <item>
+      <title>VelociRAPTOR – High-Performance Multimodal Route Planner</title>
+      <link>http://localhost:1313/projects/velociraptor/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/velociraptor/</guid>
+      <description>A high-performance C&#43;&#43; engine for large-scale multimodal public transport routing based on the RAPTOR algorithm.</description>
+    </item>
+    <item>
+      <title>Neural Multigrid – Machine Learning for Multilevel Solvers</title>
+      <link>http://localhost:1313/projects/neural-multigrid/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/neural-multigrid/</guid>
+      <description>PhD research on the use of neural networks to construct transfer operators for multilevel solvers in scientific computing.</description>
+    </item>
+    <item>
+      <title>Multilevel Monte Carlo for Random Fracture Networks</title>
+      <link>http://localhost:1313/projects/mlmc-fracture-networks/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/mlmc-fracture-networks/</guid>
+      <description>Multilevel Monte Carlo methods for uncertainty quantification in random underground fracture networks for geothermal applications.</description>
+    </item>
+    <item>
+      <title>🎓 Education</title>
+      <link>http://localhost:1313/cv/education/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cv/education/</guid>
+      <description>&lt;h2 id=&#34;phd-in-something&#34;&gt;Ph.D. in Something&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;University Name&lt;/strong&gt; (2018–2022)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Thesis: Something interesting&lt;/li&gt;
+&lt;li&gt;Coursework: Optimization, Algorithms, Networks&lt;/li&gt;
+&lt;li&gt;Publications: 3 journal papers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;msc-in-something&#34;&gt;M.Sc. in Something&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Other University&lt;/strong&gt; (2016–2018)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Specialization: Applied Mathematics&lt;/li&gt;
+&lt;li&gt;Graduated with honors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;bsc-in-something&#34;&gt;B.Sc. in Something&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;University&lt;/strong&gt; (2013–2016)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Focus: Algorithms and Computer Science&lt;/li&gt;
+&lt;li&gt;Final score: 110/110&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>💼 Experience</title>
+      <link>http://localhost:1313/cv/experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cv/experience/</guid>
+      <description>&lt;h2 id=&#34;postdoctoral-researcher&#34;&gt;Postdoctoral Researcher&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Institution&lt;/strong&gt; (2023–Present)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Optimization and ACOPF solvers&lt;/li&gt;
+&lt;li&gt;Graph algorithms for transport systems&lt;/li&gt;
+&lt;li&gt;Research supervision&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;research-assistant&#34;&gt;Research Assistant&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;University&lt;/strong&gt; (2020–2023)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Network optimization&lt;/li&gt;
+&lt;li&gt;Data analysis and modeling&lt;/li&gt;
+&lt;li&gt;Academic publications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;intern&#34;&gt;Intern&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Company&lt;/strong&gt; (2019)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data processing&lt;/li&gt;
+&lt;li&gt;Algorithm prototyping&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>http://localhost:1313/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cv/</guid>
+      <description>&lt;!-- # Curriculum Vitae --&gt;
+&lt;div class=&#34;cv-controls&#34;&gt;
+  &lt;button type=&#34;button&#34; onclick=&#34;expandAllCV()&#34;&gt;Expand all&lt;/button&gt;
+  &lt;button type=&#34;button&#34; onclick=&#34;collapseAllCV()&#34;&gt;Collapse all&lt;/button&gt;
+&lt;/div&gt;
+&lt;details class=&#34;cv-card&#34;&gt;
+  &lt;summary&gt;
+    &lt;strong&gt;🧑‍🎓 Education&lt;/strong&gt;&lt;br/&gt;
+    &lt;small&gt;PhD, MSc, BSc in Computer Science &amp; Computational Science&lt;/small&gt;
+  &lt;/summary&gt;
+  &lt;hr class=&#34;cv-separator&#34;/&gt;
+  &lt;p&gt;&lt;strong&gt;Joint PhD in Computational Mathematics and Decision Sciences&lt;/strong&gt;&lt;br/&gt;
+  Università della Svizzera Italiana (USI), Switzerland &amp; Università di Pavia, Italy — &lt;em&gt;Oct. 2018 – Feb. 2022&lt;/em&gt;&lt;br/&gt;
+  Thesis: “Construction of Grid Operators for Multilevel Solvers: a Neural Network Approach”&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Double Master’s Degree in Computer Science &amp; Computational Science&lt;/strong&gt;&lt;br/&gt;
+  Università di Milano Bicocca &amp; USI (Lugano) — &lt;em&gt;Nov. 2016 – Oct. 2018&lt;/em&gt;&lt;br/&gt;
+  Thesis: “Uncertainty Quantification Methods for Random Fracture Networks” — Grade: &lt;strong&gt;110/110&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Project Timeline</title>
+      <link>http://localhost:1313/projects-timeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects-timeline/</guid>
+      <description>&lt;ul class=&#34;project-timeline&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  &lt;li&gt;
+    &lt;strong&gt;2024&lt;/strong&gt; —
+    &lt;a href=&#34;http://localhost:1313/projects/acopf-solver/&#34;&gt;Surrogate Modeling for Power Grid Optimization&lt;/a&gt;
+  &lt;/li&gt;
+  
+  
+  
+  &lt;li&gt;
+    &lt;strong&gt;2023&lt;/strong&gt; —
+    &lt;a href=&#34;http://localhost:1313/projects/eu-road-accessibility/&#34;&gt;EU Road Accessibility &amp;amp; EV Charging Coverage Analysis&lt;/a&gt;
+  &lt;/li&gt;
+  
+  
+  
+  &lt;li&gt;
+    &lt;strong&gt;2022&lt;/strong&gt; —
+    &lt;a href=&#34;http://localhost:1313/projects/velociraptor/&#34;&gt;VelociRAPTOR – High-Performance Multimodal Route Planner&lt;/a&gt;
+  &lt;/li&gt;
+  
+  
+  
+  &lt;li&gt;
+    &lt;strong&gt;2022&lt;/strong&gt; —
+    &lt;a href=&#34;http://localhost:1313/projects/neural-multigrid/&#34;&gt;Neural Multigrid – Machine Learning for Multilevel Solvers&lt;/a&gt;
+  &lt;/li&gt;
+  
+  
+  
+  &lt;li&gt;
+    &lt;strong&gt;2018&lt;/strong&gt; —
+    &lt;a href=&#34;http://localhost:1313/projects/mlmc-fracture-networks/&#34;&gt;Multilevel Monte Carlo for Random Fracture Networks&lt;/a&gt;
+  &lt;/li&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

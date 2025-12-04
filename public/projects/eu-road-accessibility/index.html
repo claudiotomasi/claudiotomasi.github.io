@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>EU Road Accessibility &amp; EV Charging Coverage Analysis | Claudio Tomasi</title>
+<meta name="keywords" content="transport, geospatial, graph-algorithms, policy, accessibility">
+<meta name="description" content="Large-scale accessibility and electric vehicle charging coverage analysis on European road networks using graph algorithms and geospatial data.">
+<meta name="author" content="Claudio Tomasi">
+<link rel="canonical" href="http://localhost:1313/projects/eu-road-accessibility/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d74e7a50cc974e00fdba0ae96191abb6ce3ea08ea01dcb0834ab41b6501ee916.css" integrity="sha256-1056UMyXTgD9ugrpYZGrts4&#43;oI6gHcsINKtBtlAe6RY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/eu-road-accessibility/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script src="https://kit.fontawesome.com/938a6d34ff.js" crossorigin="anonymous"></script><meta property="og:url" content="http://localhost:1313/projects/eu-road-accessibility/">
+  <meta property="og:site_name" content="Claudio Tomasi">
+  <meta property="og:title" content="EU Road Accessibility & EV Charging Coverage Analysis">
+  <meta property="og:description" content="Large-scale accessibility and electric vehicle charging coverage analysis on European road networks using graph algorithms and geospatial data.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2023-09-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-01T00:00:00+00:00">
+    <meta property="article:tag" content="Transport">
+    <meta property="article:tag" content="Geospatial">
+    <meta property="article:tag" content="Graph-Algorithms">
+    <meta property="article:tag" content="Policy">
+    <meta property="article:tag" content="Accessibility">
+      <meta property="og:image" content="http://localhost:1313/images/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/images/profile.jpg">
+<meta name="twitter:title" content="EU Road Accessibility &amp; EV Charging Coverage Analysis">
+<meta name="twitter:description" content="Large-scale accessibility and electric vehicle charging coverage analysis on European road networks using graph algorithms and geospatial data.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "http://localhost:1313/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "EU Road Accessibility \u0026 EV Charging Coverage Analysis",
+      "item": "http://localhost:1313/projects/eu-road-accessibility/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "EU Road Accessibility \u0026 EV Charging Coverage Analysis",
+  "name": "EU Road Accessibility \u0026 EV Charging Coverage Analysis",
+  "description": "Large-scale accessibility and electric vehicle charging coverage analysis on European road networks using graph algorithms and geospatial data.",
+  "keywords": [
+    "transport", "geospatial", "graph-algorithms", "policy", "accessibility"
+  ],
+  "articleBody": "🌍 Overview This project focused on the modelling and analysis of road network accessibility and electric vehicle (EV) charging coverage at the European scale, carried out at the Joint Research Centre (JRC) of the European Commission.\nThe objective was twofold:\nAssess accessibility to services and population through the road infrastructure. Evaluate the spatial coverage of electric vehicle charging stations with respect to current and future EU transport policies. The work supported evidence-based transport policy and infrastructure planning across EU member states.\n🗺️ Methods \u0026 Technologies Large-scale graph construction from TomTom and geospatial road datasets Accessibility modelling and service reachability analysis Multicriteria spatial analysis Geospatial data integration and harmonisation Electric vehicle charging coverage analysis Generation of isochrones, heatmaps, and accessibility surfaces Tools \u0026 Languages:\nC++ · Python · QGIS · GeoPandas · Graph Algorithms · Geospatial Data Processing\n⚙️ My Role Built large-scale road network graphs from heterogeneous geospatial sources Performed spatial accessibility analysis for: Health services Education facilities Population reachability Analysed EV charging infrastructure coverage to identify underserved areas Integrated multiple datasets into a unified analytical framework Produced visual outputs such as: Accessibility heatmaps Travel-time isochrones Collaborated with multidisciplinary policy and modelling teams at EU level 📈 Outcomes \u0026 Impact Quantified service accessibility gaps across multiple European regions Identified critical areas for EV charging infrastructure deployment Provided decision-support maps and indicators to EU policymakers Contributed to sustainable transport planning and green mobility strategies 🏷️ Research Areas Transport Networks · Accessibility Modelling · Geospatial Analysis · Graph Algorithms · Electric Mobility · Transport Policy\n🔗 Links 📄 Related Paper: (coming soon) 💻 GitHub: https://github.com/your-repo 🌍 Demo / Documentation: (to be added) ",
+  "wordCount" : "270",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/images/profile.jpg","datePublished": "2023-09-01T00:00:00Z",
+  "dateModified": "2023-09-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Claudio Tomasi"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/projects/eu-road-accessibility/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Claudio Tomasi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Claudio Tomasi (Alt + H)">Claudio Tomasi</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/cv/" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+  <article class="project-single">
+
+    <header class="project-single-header">
+    <a class="back-link" href="javascript:history.back()">← Back</a>
+    <h1>EU Road Accessibility &amp; EV Charging Coverage Analysis</h1>
+
+
+      
+
+      
+        <div class="project-single-image">
+          <img src="/images/projects/eu-road-accessibility.png" alt="EU Road Accessibility &amp; EV Charging Coverage Analysis">
+        </div>
+      
+
+      
+        <div class="project-tags">
+          
+            <a class="project-tag" href="/tags/transport">transport</a>
+          
+            <a class="project-tag" href="/tags/geospatial">geospatial</a>
+          
+            <a class="project-tag" href="/tags/graph-algorithms">graph-algorithms</a>
+          
+            <a class="project-tag" href="/tags/policy">policy</a>
+          
+            <a class="project-tag" href="/tags/accessibility">accessibility</a>
+          
+        </div>
+      
+
+    </header>
+
+    <div class="post-content">
+      <h2 id="-overview">🌍 Overview</h2>
+<p>This project focused on the <strong>modelling and analysis of road network accessibility and electric vehicle (EV) charging coverage at the European scale</strong>, carried out at the <strong>Joint Research Centre (JRC) of the European Commission</strong>.</p>
+<p>The objective was twofold:</p>
+<ol>
+<li><strong>Assess accessibility to services and population</strong> through the road infrastructure.</li>
+<li><strong>Evaluate the spatial coverage of electric vehicle charging stations</strong> with respect to current and future EU transport policies.</li>
+</ol>
+<p>The work supported <strong>evidence-based transport policy and infrastructure planning</strong> across EU member states.</p>
+<hr>
+<h2 id="-methods--technologies">🗺️ Methods &amp; Technologies</h2>
+<ul>
+<li>Large-scale <strong>graph construction</strong> from TomTom and geospatial road datasets</li>
+<li><strong>Accessibility modelling</strong> and service reachability analysis</li>
+<li><strong>Multicriteria spatial analysis</strong></li>
+<li><strong>Geospatial data integration and harmonisation</strong></li>
+<li><strong>Electric vehicle charging coverage analysis</strong></li>
+<li>Generation of <strong>isochrones, heatmaps, and accessibility surfaces</strong></li>
+</ul>
+<p><strong>Tools &amp; Languages:</strong><br>
+C++ · Python · QGIS · GeoPandas · Graph Algorithms · Geospatial Data Processing</p>
+<hr>
+<h2 id="-my-role">⚙️ My Role</h2>
+<ul>
+<li>Built <strong>large-scale road network graphs</strong> from heterogeneous geospatial sources</li>
+<li>Performed <strong>spatial accessibility analysis</strong> for:
+<ul>
+<li>Health services</li>
+<li>Education facilities</li>
+<li>Population reachability</li>
+</ul>
+</li>
+<li>Analysed <strong>EV charging infrastructure coverage</strong> to identify underserved areas</li>
+<li>Integrated multiple datasets into a <strong>unified analytical framework</strong></li>
+<li>Produced <strong>visual outputs</strong> such as:
+<ul>
+<li>Accessibility heatmaps</li>
+<li>Travel-time isochrones</li>
+</ul>
+</li>
+<li>Collaborated with <strong>multidisciplinary policy and modelling teams</strong> at EU level</li>
+</ul>
+<hr>
+<h2 id="-outcomes--impact">📈 Outcomes &amp; Impact</h2>
+<ul>
+<li>Quantified <strong>service accessibility gaps</strong> across multiple European regions</li>
+<li>Identified <strong>critical areas for EV charging infrastructure deployment</strong></li>
+<li>Provided <strong>decision-support maps and indicators</strong> to EU policymakers</li>
+<li>Contributed to <strong>sustainable transport planning and green mobility strategies</strong></li>
+</ul>
+<hr>
+<h2 id="-research-areas">🏷️ Research Areas</h2>
+<p>Transport Networks · Accessibility Modelling · Geospatial Analysis · Graph Algorithms · Electric Mobility · Transport Policy</p>
+<hr>
+<h2 id="-links">🔗 Links</h2>
+<ul>
+<li>📄 <strong>Related Paper:</strong> <em>(coming soon)</em></li>
+<li>💻 <strong>GitHub:</strong> <a href="https://github.com/your-repo">https://github.com/your-repo</a></li>
+<li>🌍 <strong>Demo / Documentation:</strong> <em>(to be added)</em></li>
+</ul>
+
+    </div>
+
+  </article>
+
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Claudio Tomasi</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><div class="footer-socials">
+  <a target="_blank" href="https://github.com/claudiotomasi" class="social-icon" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a target="_blank" href="https://www.linkedin.com/in/claudiotomasi" class="social-icon" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+
+  <a target="_blank" href="https://scholar.google.ch/citations?user=sNxIyPwAAAAJ" class="social-icon" aria-label="Google Scholar">
+    <i class="fas fa-graduation-cap"></i>
+  </a>
+
+  <a target="_blank" href="mailto:claudio.tomasi93@gmail.com" class="social-icon" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
+
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -65,8 +65,7 @@ Machine Learning · Multigrid Methods · Scientific Computing · Numerical Linea
 ---
 
 ## 🔗 Links
-
-- 📄 **Related Paper:** _(coming soon)_
+- 📄 **Related Paper:** [Construction of Grid Operators for Multilevel Solvers: a Neural Network Approach](https://link.springer.com/chapter/10.1007/978-3-030-95025-5_63)
 - 💻 **GitHub:** https://github.com/claudiotomasi/LearnMultigrid
 <!-- - 🌍 **Demo / Documentation:** _(to be added)_ -->
 

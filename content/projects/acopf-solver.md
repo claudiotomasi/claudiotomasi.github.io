@@ -75,7 +75,7 @@ Power Systems · Machine Learning · Optimization · Graph Neural Networks · Hi
 ## 🔗 Links
 
 - 📄 **Related Paper:** _(coming soon)_
-- 💻 **GitHub:** https://github.com/your-repo
-- 🌍 **Demo / Documentation:** _(to be added)_
+<!-- - 💻 **GitHub:** https://github.com/your-repo
+- 🌍 **Demo / Documentation:** _(to be added)_ -->
 
 </div>

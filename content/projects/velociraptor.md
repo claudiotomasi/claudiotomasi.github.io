@@ -89,5 +89,8 @@ Public Transport · Multimodal Routing · Algorithm Engineering · Graph Algorit
 ## 🔗 Links
 
 - 📄 **Related Paper:** _(coming soon)_
-- 💻 **GitHub:** https://github.com/your-repo
-- 🌍 **Demo / Documentation:** _(to be added)_
+- 📚 **Cited in:**
+  - [_OECD Report - Geographic inequalities in accessibility of essential services_](https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/04/geographic-inequalities-in-accessibility-of-essential-services_afb6436a/12bab9fb-en.pdf)
+  - [_OECD Report - Getting to Services in Towns and Villages_](https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/06/getting-to-services-in-towns-and-villages_32857e50/df1e9b88-en.pdf)
+<!-- - 💻 **GitHub:** https://github.com/your-repo
+- 🌍 **Demo / Documentation:** _(to be added)_ -->

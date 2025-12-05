@@ -56,8 +56,8 @@ Uncertainty Quantification · Monte Carlo Methods · Geothermal Engineering · N
 
 ---
 
-## 🔗 Links
+<!-- ## 🔗 Links
 
 - 📄 **Related Paper:** _(coming soon)_
 - 💻 **GitHub:** https://github.com/your-repo
-- 🌍 **Demo / Documentation:** _(to be added)_
+- 🌍 **Demo / Documentation:** _(to be added)_ -->

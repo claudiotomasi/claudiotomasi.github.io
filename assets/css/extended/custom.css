@@ -118,8 +118,8 @@
 /* Profile image */
 
 .home-avatar {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: auto;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border);

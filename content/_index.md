@@ -6,7 +6,7 @@ layout: home
 <div class="home-hero-wrapper">
   <div class="home-hero">
 
-  <!-- <img src="/images/profile.jpg" class="home-avatar" alt="Claudio Tomasi"/> -->
+  <!-- <img src="/images/profile.jpeg" class="home-avatar" alt="Claudio Tomasi"/> -->
   <div >
     <h1>Claudio Tomasi</h1>
     <p><strong>Researcher in Optimization, Algorithms, and Network systems</strong></p>
